@@ -1,0 +1,212 @@
+/* ===== ТҮСТӨР ЖАНА НЕГИЗГИ ТҮЗҮМ ===== */
+:root {
+  --navy: #0f2a4a;       /* кочкул көк */
+  --navy-soft: #1d4170;
+  --green: #1f9d6b;      /* жашыл */
+  --green-dark: #167a52;
+  --bg: #f4f8fb;         /* ачык фон */
+  --white: #ffffff;
+  --text: #22324a;
+  --muted: #5f6f86;
+  --line: #dbe5ee;
+  --radius: 14px;
+  --header-h: 68px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+body {
+  font-family: "Onest", "Segoe UI", Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--green-dark); text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+
+.container { width: min(1120px, 92%); margin: 0 auto; }
+
+/* ===== МЕНЮ ===== */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 800; font-size: 1.25rem; color: var(--navy); }
+.menu { display: flex; gap: 6px; list-style: none; }
+.nav-link {
+  display: block; padding: 8px 14px; border-radius: 8px;
+  color: var(--navy); font-weight: 500; font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover { background: var(--bg); }
+.nav-link.active { background: var(--navy); color: var(--white); }
+
+.menu-btn {
+  display: none; background: none; border: 0; cursor: pointer;
+  width: 40px; height: 40px; flex-direction: column;
+  justify-content: center; align-items: center; gap: 5px;
+}
+.menu-btn span { width: 24px; height: 2px; background: var(--navy); transition: transform 0.3s, opacity 0.3s; }
+.menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.open span:nth-child(2) { opacity: 0; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== БАШКЫ БЕТ ===== */
+.hero {
+  min-height: 100vh;
+  padding: calc(var(--header-h) + 40px) 0 60px;
+  display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(2rem, 4.4vw, 3.3rem); line-height: 1.15; font-weight: 800; margin-bottom: 22px; }
+.hero p { font-size: 1.1rem; color: #d3e0ef; max-width: 52ch; margin-bottom: 32px; }
+
+.hero-photo { justify-self: center; position: relative; width: min(100%, 400px); }
+.hero-photo::before {
+  content: ""; position: absolute; inset: 18px -18px -18px 18px;
+  border: 3px solid var(--green); border-radius: 28px;
+}
+.hero-photo img {
+  position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 28px; background: var(--navy-soft);
+}
+
+/* ===== КНОПКАЛАР ===== */
+.btn {
+  display: inline-block; padding: 14px 30px; border-radius: 10px;
+  background: var(--green); color: var(--white); font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+.btn-small { padding: 10px 22px; font-size: 0.9rem; }
+
+/* ===== СЕКЦИЯЛАР ===== */
+.section { padding: 96px 0; }
+.section.alt { background: var(--bg); }
+.section h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--navy);
+  font-weight: 800; margin-bottom: 40px;
+}
+.section h2::after {
+  content: ""; display: block; width: 56px; height: 4px;
+  background: var(--green); border-radius: 2px; margin-top: 12px;
+}
+.lead { max-width: 65ch; color: var(--muted); margin: -16px 0 36px; }
+
+/* ===== КАРТОЧКАЛАР ===== */
+.card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 26px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(15, 42, 74, 0.12);
+  border-color: var(--green);
+}
+.card h3 { color: var(--navy); font-size: 1.1rem; margin-bottom: 8px; }
+.card p { color: var(--muted); }
+
+.about-grid, .contact-grid, .tech-grid, .projects-grid { display: grid; gap: 22px; }
+.about-grid { grid-template-columns: repeat(3, 1fr); }
+.contact-grid { grid-template-columns: repeat(4, 1fr); }
+.tech-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+.projects-grid { grid-template-columns: repeat(2, 1fr); }
+
+/* ===== TIMELINE ===== */
+.timeline { position: relative; max-width: 760px; padding-left: 36px; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+  width: 3px; background: var(--line); border-radius: 2px;
+}
+.timeline-item { position: relative; margin-bottom: 28px; }
+.timeline-item::before {
+  content: ""; position: absolute; left: -36px; top: 6px;
+  width: 17px; height: 17px; border-radius: 50%;
+  background: var(--green); border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--green);
+}
+.year { display: inline-block; font-weight: 800; color: var(--green-dark); margin-bottom: 8px; font-size: 1.1rem; }
+
+/* ===== IT КАРТОЧКАЛАРЫ ===== */
+.tech { text-align: center; }
+.tech-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px; border-radius: 14px; margin-bottom: 14px;
+  background: var(--navy); color: var(--white); font-weight: 800; font-size: 1.15rem;
+  transition: background 0.25s;
+}
+.tech:hover .tech-icon { background: var(--green); }
+
+/* ===== ДОЛБООРЛОР ===== */
+.project-thumb {
+  height: 150px; border-radius: 10px; margin-bottom: 18px;
+  background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 10px, #eaf1f7 10px, #eaf1f7 20px);
+  border: 1px dashed var(--line);
+}
+.project p { margin-bottom: 18px; }
+
+/* ===== БАЙЛАНЫШ / FOOTER ===== */
+.contact-grid .card p { word-break: break-word; }
+.footer { background: var(--navy); color: #c5d3e4; text-align: center; padding: 28px 12px; font-size: 0.95rem; }
+
+/* ===== ЖОГОРУ ЧЫГУУ КНОПКАСЫ ===== */
+.to-top {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  width: 48px; height: 48px; border: 0; border-radius: 50%;
+  background: var(--green); color: var(--white); font-size: 1.4rem; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background 0.2s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { background: var(--green-dark); }
+
+/* ===== SCROLL АНИМАЦИЯСЫ ===== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== ПЛАНШЕТ ЖАНА ТЕЛЕФОН ===== */
+@media (max-width: 980px) {
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px) {
+  .menu-btn { display: flex; }
+  .menu {
+    position: absolute; top: var(--header-h); left: 0; right: 0;
+    flex-direction: column; gap: 0; padding: 10px 4%;
+    background: var(--white); border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden; visibility: hidden; padding-top: 0; padding-bottom: 0;
+    transition: max-height 0.35s ease, padding 0.35s ease, visibility 0.35s;
+  }
+  .menu.open { max-height: 460px; visibility: visible; padding-top: 10px; padding-bottom: 14px; }
+  .nav-link { padding: 12px 14px; }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .hero-photo { order: -1; width: min(80%, 320px); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .section { padding: 72px 0; }
+}
+
+@media (max-width: 520px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .timeline { padding-left: 30px; }
+  .timeline-item::before { left: -30px; }
+}
