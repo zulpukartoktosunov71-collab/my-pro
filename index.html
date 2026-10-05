@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Менин жеке IT Portfolio сайтым</title>
+  <meta name="description" content="Куран мугалими жана IT багытын үйрөнүп жаткан адистин жеке портфолиосу.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== МЕНЮ ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">Портфолио</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Менюну ачуу" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="#home" class="nav-link">Башкы бет</a></li>
+        <li><a href="#about" class="nav-link">Мен жөнүндө</a></li>
+        <li><a href="#education" class="nav-link">Билимим</a></li>
+        <li><a href="#work" class="nav-link">Эмгек жолум</a></li>
+        <li><a href="#it" class="nav-link">IT</a></li>
+        <li><a href="#projects" class="nav-link">Долбоорлор</a></li>
+        <li><a href="#contact" class="nav-link">Байланыш</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. БАШКЫ БЕТ ===== -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Салам! Мен IT багытын үйрөнүп жаткан Куран мугалимимин</h1>
+          <p>2018-жылдан бери Кыргызстан Ислам Университетинин Ош колледжинде Куран мугалими болуп эмгектенип келемин. 2026-жылдан баштап IT жана заманбап технологияларды үйрөнүп жатам.</p>
+          <a href="#about" class="btn">Мен жөнүндө</a>
+        </div>
+        <div class="hero-photo">
+          <img src="images/profile.jpg" alt="Менин сүрөтүм">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. МЕН ЖӨНҮНДӨ ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="reveal">Мен жөнүндө</h2>
+        <div class="about-grid">
+          <div class="card reveal">
+            <h3>Аты-жөнү</h3>
+            <p>[Аты-жөнүңүздү бул жерге жазыңыз]</p>
+          </div>
+          <div class="card reveal">
+            <h3>Туулган күнү</h3>
+            <p>23.06.1995</p>
+          </div>
+          <div class="card reveal">
+            <h3>Туулган жери</h3>
+            <p>Кыргызстан Республикасы, Жалал-Абад облусу, Сузак району, Көк-Жаңгак шаары.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. БИЛИМИМ ===== -->
+    <section class="section alt" id="education">
+      <div class="container">
+        <h2 class="reveal">Билимим</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="year">2011</span>
+            <div class="card"><p>9-классты аяктадым.</p></div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="year">2011–2015</span>
+            <div class="card"><p>Кара-Балта шаарындагы «Куран Нуру» ислам институту.</p></div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="year">2015–2018</span>
+            <div class="card"><p>Кыргызстан Ислам Университети. Окууну 3-курстан улантып, 2018-жылы аяктадым.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. ЭМГЕК ЖОЛУМ ===== -->
+    <section class="section" id="work">
+      <div class="container">
+        <h2 class="reveal">Эмгек жолум</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="year">2018</span>
+            <div class="card"><p>Кыргызстан Ислам Университетинин Ош колледжине Куран мугалими болуп дайындалдым.</p></div>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="year">2018–2026</span>
+            <div class="card"><p>КИУ Ош колледжинде Куран мугалими болуп эмгектенип келемин.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. IT БАГЫТЫНДАГЫ БИЛИМДЕРИМ ===== -->
+    <section class="section alt" id="it">
+      <div class="container">
+        <h2 class="reveal">IT багытындагы билимдерим</h2>
+        <p class="lead reveal">2026-жылдын 28-сентябрынан баштап КМДБ тарабынан демилгеленген айлык семинарда окуп жатам.</p>
+        <div class="tech-grid">
+          <div class="card tech reveal"><span class="tech-icon">&lt;/&gt;</span><h3>HTML</h3><p>Сайттын структурасы</p></div>
+          <div class="card tech reveal"><span class="tech-icon">{ }</span><h3>CSS</h3><p>Дизайн жана стиль</p></div>
+          <div class="card tech reveal"><span class="tech-icon">JS</span><h3>JavaScript</h3><p>Сайттын интерактивдүүлүгү</p></div>
+          <div class="card tech reveal"><span class="tech-icon">Py</span><h3>Python</h3><p>Программалоо тили</p></div>
+          <div class="card tech reveal"><span class="tech-icon">Git</span><h3>GitHub</h3><p>Кодду сактоо жана бөлүшүү</p></div>
+          <div class="card tech reveal"><span class="tech-icon">▲</span><h3>Vercel</h3><p>Сайтты интернетке чыгаруу</p></div>
+          <div class="card tech reveal"><span class="tech-icon">AI</span><h3>Artificial Intelligence</h3><p>Жасалма интеллект менен иштөө</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. ДОЛБООРЛОР ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="reveal">Менин долбоорлорум</h2>
+        <div class="projects-grid">
+          <article class="card project reveal">
+            <div class="project-thumb"></div>
+            <h3>Жеке Portfolio</h3>
+            <p>Жакында кошулат.</p>
+            <a href="#" class="btn btn-small">Көрүү</a>
+          </article>
+          <article class="card project reveal">
+            <div class="project-thumb"></div>
+            <h3>КИУ Ош колледжи — Куран жаттатуу борбору</h3>
+            <p>Жакында кошулат.</p>
+            <a href="#" class="btn btn-small">Көрүү</a>
+          </article>
+          <article class="card project reveal">
+            <div class="project-thumb"></div>
+            <h3>IT курсу</h3>
+            <p>Жакында кошулат.</p>
+            <a href="#" class="btn btn-small">Көрүү</a>
+          </article>
+          <article class="card project reveal">
+            <div class="project-thumb"></div>
+            <h3>Келечектеги долбоорлор</h3>
+            <p>Жакында кошулат.</p>
+            <a href="#" class="btn btn-small">Көрүү</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. БАЙЛАНЫШ ===== -->
+    <section class="section alt" id="contact">
+      <div class="container">
+        <h2 class="reveal">Байланыш</h2>
+        <div class="contact-grid">
+          <div class="card reveal"><h3>Телефон</h3><p>[телефон номериңиз]</p></div>
+          <div class="card reveal"><h3>Email</h3><p>[email дарегиңиз]</p></div>
+          <div class="card reveal"><h3>GitHub</h3><p><a href="#">[GitHub шилтемеңиз]</a></p></div>
+          <div class="card reveal"><h3>Instagram</h3><p><a href="#">[Instagram шилтемеңиз]</a></p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Менин жеке IT Portfolio сайтым</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Жогору чыгуу">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
